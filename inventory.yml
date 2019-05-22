@@ -1,0 +1,16 @@
+---
+[nodes]
+k8s-master ansible_host=192.168.10.40
+k8s-minion1 ansible_host=192.168.15.51
+k8s-minion2 ansible_host=192.168.15.52
+jenkins ansible_host=192.168.15.30
+
+[k8s-minions]
+k8s-minion1 ansible_host=192.168.15.51
+k8s-minion2 ansible_host=192.168.15.52
+
+[k8s-master]
+k8s-master ansible_host=192.168.10.40
+
+[jenkins]
+jenkins ansible_host=192.168.15.30
