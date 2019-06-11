@@ -6,6 +6,7 @@ sudo apt-get install ansible -y
 
 sleep 15
 
+sudo chown -R ubuntu /home/ubuntu/.ansible
 
 ansible-playbook -i /home/ubuntu/ansible_repo/inventory.yml /home/ubuntu/ansible_repo/install-docker.yml
 
