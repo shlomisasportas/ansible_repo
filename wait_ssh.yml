@@ -1,0 +1,6 @@
+- hosts: all
+  tags: wait
+  gather_facts: no
+  tasks:
+  - name: Wait for SSH
+    local_action: wait_for port=22 host={% if 192.168.40.10 is defined %}{{ 192.168.40.10 }}{% else %}{{ k8s-master }}{% endif %}
