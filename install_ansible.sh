@@ -26,4 +26,6 @@ sleep 5
 
 sudo chown -R ubuntu /home/ubuntu/.ansible
 
+/home/ubuntu/ansible_repo/install_ansible.sh
+
 
