@@ -26,6 +26,8 @@ sleep 5
 
 sudo chown -R ubuntu /home/ubuntu/.ansible
 
+chmod 777 /home/ubuntu/ansible_repo/ymlo.sh
+
 /home/ubuntu/ansible_repo/ymlo.sh
 
 
