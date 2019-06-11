@@ -1,7 +1,11 @@
 #! /bin/bash
 
 sudo apt-add-repository ppa:ansible/ansible -y
+sleep 10
+
 sudo apt-get update -y
+sleep 10 
+
 sudo apt-get install ansible -y
 
 sleep 60
