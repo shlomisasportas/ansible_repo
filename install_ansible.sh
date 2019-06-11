@@ -6,6 +6,14 @@ sudo apt-get install ansible -y
 
 sleep 20
 
+sudo sed -i 's/#   StrictHostKeyChecking ask/StrictHostKeyChecking no/g' /etc/ssh/ssh_config
+sudo chown ubuntu /etc/ssh/ssh_config
+sudo echo "UserKnownHostsFile=/dev/null" >> /etc/ssh/ssh_config
+
+sudo service ssh restart
+
+sleep 2 
+
 ssh -o stricthostkeychecking=no ubuntu@192.168.15.51 'sudo echo "UserKnownHostsFile /dev/null" >> ~/.ssh/config'
 ssh -o stricthostkeychecking=no ubuntu@192.168.15.52 'sudo echo "UserKnownHostsFile /dev/null" >> ~/.ssh/config'
 ssh -o stricthostkeychecking=no ubuntu@192.168.10.40 'sudo echo "UserKnownHostsFile /dev/null" >> ~/.ssh/config'
