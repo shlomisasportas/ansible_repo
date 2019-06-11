@@ -4,10 +4,9 @@ sudo apt-add-repository ppa:ansible/ansible -y
 sudo apt-get update -y
 sudo apt-get install ansible -y
 
-sleep 15
+sleep 20
 
-sudo chown -R ubuntu /home/ubuntu/.ansible
-
+until sudo chown -R ubuntu /home/ubuntu/.ansible; do echo "Retrying"; sleep 5; done
 ansible-playbook -i /home/ubuntu/ansible_repo/inventory.yml /home/ubuntu/ansible_repo/install-docker.yml
 
 ansible-playbook -i /home/ubuntu/ansible_repo/inventory.yml /home/ubuntu/ansible_repo/k8s-common.yml
